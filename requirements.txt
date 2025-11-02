@@ -1,0 +1,3 @@
+# IMDb TV Show Scraper Requirements
+
+cinemagoer>=2023.5.1

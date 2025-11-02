@@ -1,0 +1,61 @@
+QUICKSTART GUIDE
+================
+
+INSTALL
+-------
+pip install cinemagoer
+
+
+RUN
+---
+python imdb_tv_scraper.py tv_list.txt
+
+
+INPUT
+-----
+Create tv_list.txt with one show per line:
+
+Breaking Bad
+The Office
+Stranger Things
+
+
+OUTPUT
+------
+tv_shows_imdb.csv          (successful results - TMDB ready)
+tv_shows_imdb_failed.txt   (error details)
+tv_shows_imdb_failed_list.txt (failed titles)
+
+
+OPTIONS
+-------
+No delay (default):
+  python imdb_tv_scraper.py tv_list.txt
+
+With 2 second delay:
+  python imdb_tv_scraper.py tv_list.txt --delay=2
+
+Custom output file:
+  python imdb_tv_scraper.py tv_list.txt output.csv
+
+
+RESUME
+------
+If interrupted, run same command:
+  python imdb_tv_scraper.py tv_list.txt
+  
+Script will ask: Resume from position 246? (y/n)
+
+
+TROUBLESHOOTING
+---------------
+HTTP errors: Add --delay=2
+Import error: pip install cinemagoer
+Titles with years: Use "Lost in Space" not "Lost in Space (2018)"
+
+
+PERFORMANCE
+-----------
+100 titles: ~2-5 minutes
+400 titles: ~8-20 minutes
+Add --delay=2 if getting errors (will take longer)
